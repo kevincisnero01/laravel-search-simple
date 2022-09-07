@@ -6,7 +6,7 @@
         <h1 class="fs-3 fw-bold">Busqueda de Usuario</h1>
     </div><!--.col-->
     <div class="col-md-8">
-        <form action="{{ route('users') }}" method="get" class="row row-cols-lg-auto ">
+        <form action="{{ route('users.index') }}" method="get" class="row row-cols-lg-auto ">
         <div class="form-group px-1">
             <input type="text" class="form-control form-control-sm"  name="name" placeholder="Nombre">
         </div>
@@ -28,7 +28,34 @@
     </div><!--.col-->
 </div><!--.row-->
 <hr>
-
+<div class="row">
+    <div class="col-10 mx-auto">
+        <table class="table table-hover table-stripped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Biografia</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($users as $user)
+                <tr>
+                    <td>{{ $user->id }}</td>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->bio }}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-center">
+            {{ $users->links() }}
+        </div>
+        
+    </div>
+</div>
 
 
 </div>
