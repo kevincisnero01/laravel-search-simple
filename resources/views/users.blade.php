@@ -8,15 +8,15 @@
     <div class="col-md-8">
         <form action="{{ route('users.index') }}" method="get" class="row row-cols-lg-auto ">
         <div class="form-group px-1">
-            <input type="text" class="form-control form-control-sm"  name="name" placeholder="Nombre">
+            <input type="text" class="form-control form-control-sm"  name="name" value="{{$name}}" placeholder="Nombre">
         </div>
 
         <div class="form-group px-1">
-            <input type="text" class="form-control form-control-sm"  name="email" placeholder="Email">
+            <input type="text" class="form-control form-control-sm"  name="email" value="{{$email}}" placeholder="Email">
         </div>
 
         <div class="form-group px-1">
-            <input type="text" class="form-control form-control-sm"  name="bio" placeholder="Biografia">
+            <input type="text" class="form-control form-control-sm"  name="bio"  value="{{$bio}}" placeholder="Biografia">
         </div>
 
         <div class="form-group px-1">
